@@ -84,6 +84,7 @@
     <!-- forms -->
     <Compile Include="Admin\AdminClass.cs" />
     <Compile Include="Admin\WindowManager.cs" />
+    <Compile Include="FileTools\FileTool.cs" />
     <!-- infrastructure -->
     <Compile Include="PluginInfrastructure\ClikeStringArray.cs" />
     <Compile Include="PluginInfrastructure\DllExport\DllExportAttribute.cs" />

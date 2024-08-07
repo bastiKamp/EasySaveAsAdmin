@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using EasySaveAsAdmin.Admin;
+using EasySaveAsAdmin.FileTools;
 using EasySaveAsAdmin.PluginInfrastructure;
 using EasySaveAsAdmin.Utils;
 
@@ -48,6 +49,11 @@ namespace EasySaveAsAdmin
                 case saveCode:
                 {
                     var filePath = Npp.Notepad.GetCurrentFilePath();
+                    if (FileTool.CanSave(filePath))
+                    {
+                        return;
+                    }
+                    
                     var text = Npp.Editor.GetText();
                     var bytes = Encoding.UTF8.GetBytes(text);
                     var base64String = Convert.ToBase64String(bytes);
@@ -56,7 +62,6 @@ namespace EasySaveAsAdmin
                 }
                 case (uint)NppMsg.NPPN_FILESAVED:
                 {
-                    Thread.Sleep(1000);
                     var filePath = Npp.Notepad.GetCurrentFilePath();
                     if (_adminSaveToolUsed)
                     {
