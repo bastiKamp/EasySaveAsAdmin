@@ -30,7 +30,10 @@ namespace EasySaveAsAdmin
 
         private static void ShowAbout()
         {
-            MessageBox.Show("Hello");
+            var about = new About.About();
+            about.StartPosition = FormStartPosition.CenterParent;
+            about.ShowDialog();
+            about.Focus();
         }
 
         private static Assembly LoadDependency(object sender, ResolveEventArgs args)
