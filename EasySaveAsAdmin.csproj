@@ -139,7 +139,6 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <DEPENDENCY_DIR Include="Dependencies\$(Platform)" />
         <DEPENDENCY_DLLS Include="Dependencies\$(Platform)\*.dll" />
       </ItemGroup>
     </Otherwise>
@@ -152,10 +151,6 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net.Http" />
-    <!-- third-party dependencies -->
-    <Reference Include="ExampleDependency">
-      <HintPath>@(DEPENDENCY_DIR)\ExampleDependency.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <!-- resx files -->
