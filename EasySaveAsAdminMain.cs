@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using EasySaveAsAdmin.Admin;
 using EasySaveAsAdmin.FileTools;
@@ -68,6 +69,7 @@ namespace EasySaveAsAdmin
                     var filePath = Npp.Notepad.GetCurrentFilePath();
                     if (_adminSaveToolUsed)
                     {
+                        Thread.Sleep(1000);
                         Npp.Notepad.ReloadFile(filePath);
                     }
                     break;

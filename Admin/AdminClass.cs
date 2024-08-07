@@ -27,6 +27,7 @@ namespace EasySaveAsAdmin.Admin
                 }
 
                 var process = new Process();
+                process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 process.StartInfo.CreateNoWindow = true;
                 process.StartInfo.UseShellExecute = true;
                 process.StartInfo.FileName = saveAsAppPath;
